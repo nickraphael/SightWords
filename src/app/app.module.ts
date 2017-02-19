@@ -4,18 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { KSSwiperModule } from 'angular2-swiper';
+import { KSSwiperContainer, KSSwiperSlide } from 'angular2-swiper';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    KSSwiperContainer, 
+    KSSwiperSlide
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    KSSwiperModule
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
