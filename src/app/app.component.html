@@ -1,7 +1,11 @@
 <h1>
-  <img src="/assets/WB.jpg">
+  <img src="/assets/WB.jpg" *ngIf="showLogo" style="width: 200px;">
 </h1>
 
-<button (click)="viewWords()">Go !</button>
-
-<button (click)="settings()">Settings</button>
+<div class="myslides">
+  <ks-swiper-container [options]="example1SwipeOptions">
+    <ks-swiper-slide *ngFor="let w of words">
+      <div style="font-size:1000%;background-color: red;padding-left: 80px;padding-right: 80px;border-radius: 40px;">{{w.word}}</div>
+    </ks-swiper-slide>
+  </ks-swiper-container>
+</div>
