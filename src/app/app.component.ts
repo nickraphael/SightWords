@@ -1,5 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import {KSSwiperContainer, KSSwiperSlide} from 'angular2-swiper';
+import { KSSwiperContainer, KSSwiperSlide } from 'angular2-swiper';
+
+import * as _ from 'underscore'
 
 import { Words, IWord } from './words'
 
@@ -14,7 +16,22 @@ export class AppComponent {
   title = 'app works!';
   showLogo: Boolean = true;
   example1SwipeOptions: any;
-  words: IWord[] = Words.allWords;
+  words: IWord[] = [];
+
+  blue: Boolean = true;
+  red: Boolean = false;
+  green: Boolean = false;
+  orangered: Boolean = false;
+  indigo: Boolean = false;
+  pink: Boolean = false;
+  purple: Boolean = false;
+  lime: Boolean = false;
+  aqua: Boolean = false;
+  violet: Boolean = false;
+  gold: Boolean = false;
+  lemonChiffon : Boolean = false;
+
+
 
   // this is how you get access to the child component
   @ViewChild(KSSwiperContainer) swiperContainer: KSSwiperContainer;
@@ -25,28 +42,22 @@ export class AppComponent {
       loop: true,
       spaceBetween: 5
     };
+
+    this.randomizeArray();
   }
 
-  moveNext() {
-    this.swiperContainer.swiper.slideNext();
-  }
+  randomizeArray() {
+    console.log("randomizeArray");
 
-  movePrev() {
-    this.swiperContainer.swiper.slidePrev();
-  }
+    this.words = [];
 
-  ngAfterViewInit() {
-    console.log(this.swiperContainer);
-  }
+    let selectedWords: IWord[] = Words.allWords.filter((word: IWord) => {
+      return this[word.colour];
+    });
 
-
-  viewWords() {
-    this.showLogo = false;
-
-  }
-
-  settings() {
-
+    for (var _i = 0; _i < 10; _i++) {
+      this.words = this.words.concat(_.shuffle<IWord>(selectedWords));
+    }
   }
 
 }

@@ -1,11 +1,35 @@
-<h1>
+<h1 style="text-align: center;">
   <img src="/assets/WB.jpg" *ngIf="showLogo" style="width: 200px;">
 </h1>
 
 <div class="myslides">
   <ks-swiper-container [options]="example1SwipeOptions">
-    <ks-swiper-slide *ngFor="let w of words">
-      <div style="font-size:1000%;background-color: red;padding-left: 80px;padding-right: 80px;border-radius: 40px;">{{w.word}}</div>
+    <ks-swiper-slide *ngFor="let w of words" [style.background-color]="w.colour">
+      <div [style.background-color]="w.colour" style="font-size:1000%;font-family: cursive;">{{w.word}}</div>
     </ks-swiper-slide>
   </ks-swiper-container>
 </div>
+<span>
+  <table>
+    <tr>
+      <td>
+        <input type="checkbox" [(ngModel)]="blue" (ngModelChange)="randomizeArray()" /> blue<br/>
+        <input type="checkbox" [(ngModel)]="red" (ngModelChange)="randomizeArray()" /> red<br/>
+        <input type="checkbox" [(ngModel)]="gold" (ngModelChange)="randomizeArray()" /> golden<br/>
+        <input type="checkbox" [(ngModel)]="green" (ngModelChange)="randomizeArray()" /> green<br/>
+        <input type="checkbox" [(ngModel)]="purple" (ngModelChange)="randomizeArray()" /> purple<br/>
+        <input type="checkbox" [(ngModel)]="orangered" (ngModelChange)="randomizeArray()" /> orange<br/>
+      </td>
+      <td>
+        <input type="checkbox" [(ngModel)]="pink" (ngModelChange)="randomizeArray()" /> pink<br/>
+        <input type="checkbox" [(ngModel)]="indigo" (ngModelChange)="randomizeArray()" /> indigo<br/>
+        <input type="checkbox" [(ngModel)]="yellow" (ngModelChange)="randomizeArray()" /> lemon<br/>
+        <input type="checkbox" [(ngModel)]="aqua" (ngModelChange)="randomizeArray()" /> aqua<br/>
+        <input type="checkbox" [(ngModel)]="lime" (ngModelChange)="randomizeArray()" /> lime<br/>
+        <input type="checkbox" [(ngModel)]="violet" (ngModelChange)="randomizeArray()" /> violet<br/>
+      </td>
+    </tr>
+  </table>
+</span>
+
+
