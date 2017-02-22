@@ -1,11 +1,11 @@
-<h1 style="text-align: center;">
-  <img src="/assets/WB.jpg" *ngIf="showLogo" style="width: 200px;">
+<h1 style="text-align: center;color: lightgray;">
+  Sight-Words
 </h1>
 
 <div class="myslides">
   <ks-swiper-container [options]="example1SwipeOptions">
     <ks-swiper-slide *ngFor="let w of words" [style.background-color]="w.colour">
-      <div [style.background-color]="w.colour" style="font-size:1000%;font-family: cursive;">{{w.word}}</div>
+      <div [style.background-color]="w.colour" style="font-size:1000%;">{{w.word}}</div>
     </ks-swiper-slide>
   </ks-swiper-container>
 </div>

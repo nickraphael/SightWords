@@ -55,7 +55,7 @@ export class AppComponent {
       return this[word.colour];
     });
 
-    for (var _i = 0; _i < 10; _i++) {
+    for (var _i = 0; _i < 5; _i++) {
       this.words = this.words.concat(_.shuffle<IWord>(selectedWords));
     }
   }
